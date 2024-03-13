@@ -1,29 +1,28 @@
 # Esercizio
 
-Continuiamo a lavorare sul codice dei giorni scorsi, ma in una nuova repo e aggiungiamo una nuova entità Type.
-Questa entità rappresenta la tipologia di progetto ed è in relazione one to many con i progetti.
+Continuiamo a lavorare sul codice dei giorni scorsi, ma in una nuova repo.
+L'esercizio di oggi è suddiviso in milestone ed è importante che ne seguiate l'ordine.
 
-I task da svolgere sono diversi, ma alcuni di essi sono un ripasso di ciò che abbiamo fatto nelle lezioni dei giorni scorsi:
+Milestone 1
+nome repo 1: laravel-api
+Aggiungiamo al nostro progetto Laravel una nuovo Api/ProjectController. Questo controller risponderà a delle richieste via API e si occuperà di restituire la lista dei progetti presenti nel database in formato json.
 
-_Creare la migration per la tabella types
+Milestone 2
+Testiamo la chiamata API tramite Postman e assicuriamoci di ricevere i dati correttamente.
 
-_Creare il model Type
+Milestone 3
+nome repo 2: vite-boolfolio
+Iniziamo ad occuparci della parte front-office della nostra applicazione: creiamo un nuovo progetto Vue 3 con Vite e installiamo axios.
+Colleghiamo questo progetto ad una repo separata.
 
-_Creare la migration di modifica per la tabella projects per aggiungere la chiave esterna
+Milestone 4
+Nel componente principale della nostra Vue App facciamo una chiamata API all'endpoint costruito nel progetto Laravel (milestone 1) e recuperiamo tutti i progetti dal nostro back-end.
+Stampiamo in console i risultati e verifichiamo di ricevere i dati correttamente.
 
-_Aggiungere ai model Type e Project i metodi per definire la relazione one to many
-
-_Visualizzare nella pagina di dettaglio di un progetto la tipologia associata, se presente
-permettere all'utente di associare una tipologia nella pagina di creazione e modifica di un progetto
-
-_gestire il salvataggio dell'associazione progetto-tipologia con opportune regole di validazione
-
-BONUS:
-
-Bonus 1:
-creare il seeder per il model Type.
-Bonus 2:
-aggiungere le operazioni CRUD per il model Type, in modo da gestire le tipologie di progetto direttamente dal pannello di amministrazione.
+Milestone 5
+Creiamo un nuovo componente ProjectCard, che corrisponde ad una card per visualizzare un progetto. Utilizziamo questo componente per visualizzare tutti i progetti ricevuti tramite API.
+Bonus:
+Gestire la paginazione dei risultati
 
 
 
