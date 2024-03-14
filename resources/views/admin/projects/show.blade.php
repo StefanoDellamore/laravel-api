@@ -11,12 +11,26 @@
                         {{ $project->title }}
                     </h1>
 
-                    <h2>
-                        Modello:
+                    <div>
+                        <h2>Modello:</h2>
                         <a href="{{ route('types.show', ['type'=>$project->type->slug]) }}">
                             {{ $project->type->title }}
                         </a>
-                    </h2>
+                    </div>
+
+                    <div>
+                        @foreach ($tags->projects as $project) 
+                        <li>
+                           <a href="{{ route('admin.tags.show', ['tag' => $tag->slug]) }}">
+                                {{ $project->title }}
+                           </a>
+                        </li>
+                    @endforeach
+                </ul>
+                    </div>
+                    
+
+
                     
                     <p>
                         {{ $project->content }}

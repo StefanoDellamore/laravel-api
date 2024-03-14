@@ -22,6 +22,26 @@
                                 {{ $message }}
                             </div>
                         @enderror
+
+                        {{-- ---------------------------- --}}
+
+                        <div class="mb-3">                            
+                            
+                            <label class="form-label">Tag</label>
+
+                            <div>
+                                @foreach ($tags as $tag)
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="tag-{{ $tag->id }}" name="tags[]" value="{{ $tag->id }}">
+                                        <label class="form-check-label" for="tag-{{ $tag->id }}">{{ $tag->title }}</label>
+                                    </div>
+                                @endforeach
+                            </div>
+                                                                                  
+                        </div>
+
+                        {{-- ---------------------------- --}}
+                        
                         <div class="mb-3">
                             <label for="type_id" class="form-label">Modelli</label>
                             <select name="type_id" id="type_id" class="form-select mb-3">
@@ -40,6 +60,8 @@
                             </div>
                         @enderror
 
+                        
+
                         <label for="update_at" class="form-label">Ora di creazione</label>
                         <input type="text" class="form-control mb-3 @error('content') is-invalid @enderror" id="update_at" name="update_at" placeholder="Inserisci l'ora di creazione"
                             maxlength="1024" value="{{ old('update_at') }}">
@@ -57,6 +79,8 @@
                                 {{ $message }}
                             </div>
                         @enderror
+
+                        
 
                         <div>
                             <button type="submit" class="btn btn-success w-100">

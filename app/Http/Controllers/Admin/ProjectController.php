@@ -12,6 +12,7 @@ use App\Http\Requests\UpdateProjectRequest;
 //Models
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Tag;
 
 //Helpers
 use Illuminate\Support\Str;
@@ -33,7 +34,8 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.projects.create', compact('types'));
+        $tags = Tag::all();
+        return view('admin.projects.create', compact('types', 'tags'));
     }
 
     /**
@@ -46,6 +48,10 @@ class ProjectController extends Controller
         $projectData['slug'] = Str::slug($projectData['title']);
 
         $project = Project::create($projectData);
+
+        foreach ($projectData['tags'] as $singleTagId) {
+           $project->tags()->attach($singleTagId);
+        }
 
         return redirect()->route('admin.projects.show', ['project' => $project->slug]);
     }

@@ -1,6 +1,7 @@
 # Esercizio
 
 Continuiamo a lavorare sul codice dei giorni scorsi, ma in una nuova repo.
+
 L'esercizio di oggi è suddiviso in milestone ed è importante che ne seguiate l'ordine.
 
 Milestone 1
@@ -21,6 +22,7 @@ Stampiamo in console i risultati e verifichiamo di ricevere i dati correttamente
 
 Milestone 5
 Creiamo un nuovo componente ProjectCard, che corrisponde ad una card per visualizzare un progetto. Utilizziamo questo componente per visualizzare tutti i progetti ricevuti tramite API.
+
 Bonus:
 Gestire la paginazione dei risultati
 

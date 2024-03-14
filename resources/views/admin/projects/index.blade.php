@@ -24,15 +24,32 @@
                                 {{ $project->content }}
                             </p>
 
-                            @if ($project->type != null)
-                                <div class="btn btn-light mb-3">
-                                    <a href="{{ route('types.show', ['type'=>$project->type->slug]) }}">
-                                        {{ $project->type->title }}
-                                    </a>
+                            <div class="d-flex flex-column">
+                                <div>
+                                    @if ($project->type != null)
+                                    <div class="btn btn-light mb-3">
+                                        <a href="{{ route('types.show', ['type'=>$project->type->slug]) }}">
+                                            {{ $project->type->title }}
+                                        </a>
+                                    </div>                                    
+                                    @endif
                                 </div>
-                                
-                            @endif
 
+                                <div>
+                                    @forelse ($project->tags as $tag)
+                                    <a href="{{ route('admin.tags.show', ['tag' => $tag->slug]) }}" class="badge rounded-pill text-bg-info mb-3">
+                                        {{ $tag->title }}
+                                    </a>                               
+                                        
+                                    @empty 
+                                        <span class="badge rounded-pill text-bg-info mb-3">
+                                            -
+                                        </span>
+                                    @endif
+                                </div>
+                             
+                            </div>
+                            
                             <div class="edit-buttons-container d-flex justify-content-between">
 
                                 <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="btn btn-primary">

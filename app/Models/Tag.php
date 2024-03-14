@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'slug'
+    ];
+
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class);
+    }
 }
