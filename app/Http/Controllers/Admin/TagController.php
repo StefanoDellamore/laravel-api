@@ -86,7 +86,7 @@ class TagController extends Controller
             'slug' => $slug,
         ]);
 
-        return redirect() -> route('admin.tags.show', ['tag'=>$tag->id]);
+        return redirect()->route('admin.tags.show', ['tag'=>$tag->id]);
     }
 
     /**
