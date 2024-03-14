@@ -23,5 +23,7 @@ Route::name ('api.')->group(function(){
         return $request->user();
     });
     
-    Route::get('/project', [ProjectController::class, 'index'])->name('api.project.index') ;
+    Route::resource('projects', ProjectController::class)->only([
+        'index', 'show'
+    ]);
 });
