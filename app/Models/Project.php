@@ -14,7 +14,7 @@ class Project extends Model
         'title',
         'slug',
         'content',
-        'category_id',
+        'type_id',
         'status',
     ];
 
@@ -26,7 +26,7 @@ class Project extends Model
         return $this->belongsTo(Type::class);
     }
 
-    public function tags()
+    public function tag()
     {
         return $this->belongsToMany(Tag::class);
     }
